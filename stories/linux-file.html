@@ -58,47 +58,47 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
-          <p>
-            o Files and File systems.
-            o open() - reading, writing or both
-            o unique descriptor, fd in kernel and shared with user space
-            o Regular file - bytes of data, organized in linear array, called "byte stream"
-            o ----before the zero pos------0123456.............-----after zero pos----
-            o fd is zero then the file is opened
-            o file position - file offset, C type in Linux, 64-bits
-            o it is not possible to write before zero position, but is it possible to write after
-            o truncation goes both ways! extension usually is putting in zeros
-            o writing in a position "in the middle" overwrites the byte
-            o the file size is called file length
-            o internally kernel uses an information node (inode) as file handle (to find the file)
-            o i-number/ino does NOT includes file name, but includes
-            - modification timestamp
-            - owner
-            - type
-            - length
-            - location of data
-            o position (fd) and length are limited by C types used by kernel, but
-            filesystem implemention can override that
-            o files can be opened "simultaniously" by the same or other process
-            just reffering to the file descriptor which is unique inside the system
-            o no restrictions on concurrent file access, applications must handle syncronization
-            o directories maps inodes to filenames (it is the name how Linux system finds
-            the files for a user)
-            o name + inode = link (stored in table/hash managed by kernel)
-            o conceptually the directory is viewed like any normal file, but it contains
-            only a mapping of names and inodes
-            o from the filename the kernel finds inode
-            o absolute pathname or relative pathname + working directory
-            o multiple names can resolve to the same inode (hard link)
-            o symbolic links more overhead, because first resolve file, so the linked-to file
-            o symbolic links require specific system calls
-            o Special files: block device files, character device files, named pipes and
-            Unix domain sockets (Linux provides a system call to create a special file)
-            o device files are block and character
-            o named (FIFO special file) and regular pipes (in memory with system call)
-            o sockets (Unix domain sockets, internet sockets)
-            o the single, shared namespace for all mounted filesystems (partitions)
-
+          <ul>
+            <li> Files and File systems.</li>
+            <li> open() - reading, writing or both</li>
+            <li> unique descriptor, fd in kernel and shared with user space</li>
+            <li> Regular file - bytes of data, organized in linear array, called "byte stream"</li>
+            <li> ----before the zero pos------0123456.............-----after zero pos----</li>
+            <li> fd is zero then the file is opened</li>
+            <li> file position - file offset, C type in Linux, 64-bits</li>
+            <li> it is not possible to write before zero position, but is it possible to write after</li>
+            <li> truncation goes both ways! extension usually is putting in zeros</li>
+            <li> writing in a position "in the middle" overwrites the byte</li>
+            <li> the file size is called file length</li>
+            <li> internally kernel uses an information node (inode) as file handle (to find the file)</li>
+            <li> i-number/ino does NOT includes file name, but includes</li>
+            <ul><li>- modification timestamp</li>
+            <li>- owner</li>
+            <li>- type</li>
+            <li>- length</li>
+            <li>- location of data</ul></li>
+            <li> position (fd) and length are limited by C types used by kernel, but
+            filesystem implemention can override that</li>
+            <li> files can be opened "simultaniously" by the same or other process
+            just reffering to the file descriptor which is unique inside the system</li>
+            <li> no restrictions on concurrent file access, applications must handle syncronization</li>
+            <li> directories maps inodes to filenames (it is the name how Linux system finds
+            the files for a user)</li>
+            <li> name + inode = link (stored in table/hash managed by kernel)</li>
+            <li> conceptually the directory is viewed like any normal file, but it contains
+            only a mapping of names and inodes</li>
+            <li> from the filename the kernel finds inode</li>
+            <li> absolute pathname or relative pathname + working directory</li>
+            <li> multiple names can resolve to the same inode (hard link)</li>
+            <li> symbolic links more overhead, because first resolve file, so the linked-to file</li>
+            <li> symbolic links require specific system calls</li>
+            <li> Special files: block device files, character device files, named pipes and
+            Unix domain sockets (Linux provides a system call to create a special file)</li>
+            <li> device files are block and character</li>
+            <li> named (FIFO special file) and regular pipes (in memory with system call)</li>
+            <li> sockets (Unix domain sockets, internet sockets)</li>
+            <li> the single, shared namespace for all mounted filesystems (partitions)</li>
+          </ul>
 
           </p>
         </div><!--/.col-xs-12.col-sm-9-->
